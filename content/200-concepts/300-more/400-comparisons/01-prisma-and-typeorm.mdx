@@ -318,7 +318,7 @@ export class Post {
 While each object in the returned `publishedPosts` array only carries the selected `id` and `title` properties at runtime, the TypeScript compiler doesn't have any knowledge of this. It will allow you to access any other properties defined on the `Post` entity after the query, for example:
 
 ```ts
-const post = publishedPost[0]
+const post = publishedPosts[0]
 
 // The TypeScript compiler has no issue with this
 if (post.content.length > 0) {
@@ -579,7 +579,7 @@ This section explains the differences in type safety when filtering a list of re
 
 TypeORM allows to pass a `where` option to its [`find`](https://typeorm.io/#/find-options) methods to filter the list of returned records according to specific criteria. These criteria can be defined with respect to a model's properties.
 
-##### Loosing type-safety using operators
+##### Losing type-safety using operators
 
 Consider this example:
 
